@@ -2,11 +2,11 @@ package com.gerard.flappybird;
 
 import com.badlogic.gdx.ApplicationAdapter;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
-import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.gerard.flappybird.States.GameStateManager;
-import com.gerard.flappybird.States.MenuState;
+import com.gerard.flappybird.states.GameStateManager;
+import com.gerard.flappybird.states.MenuState;
 
 public class FlappyBird extends ApplicationAdapter {
 	public static final int WIDTH = 480;
@@ -15,7 +15,8 @@ public class FlappyBird extends ApplicationAdapter {
 
 	private GameStateManager gsm;
 	private SpriteBatch batch;
-	Texture img;
+
+
 	
 	@Override
 	public void create () {
@@ -31,10 +32,8 @@ public class FlappyBird extends ApplicationAdapter {
 		gsm.update(Gdx.graphics.getDeltaTime());
 		gsm.render(batch);
 	}
-	
-	@Override
-	public void dispose () {
-		batch.dispose();
-		img.dispose();
+
+	public void dispose() {
+		super.dispose();
 	}
 }
